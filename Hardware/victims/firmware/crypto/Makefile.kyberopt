@@ -1,0 +1,25 @@
+########
+CRYPTO_LIB = Kyber512s
+#SRC += cbd.c fips202.c indcpa.c kem.c ntt.c poly.c polyvec.c PQCgenKAT_kem.c reduce.c rng.c verify.c symmetric-shake.c kyber.c kyber-opt-indep.c
+SRC += cbd.c 
+SRC +=fips202.c 
+SRC +=indcpa.c 
+SRC +=kem.c 
+SRC +=keccakf1600.c 
+SRC +=matacc.c 
+SRC +=ntt.c 
+SRC +=poly.c 
+SRC +=polyvec.c 
+SRC +=symmetric-fips202.c 
+SRC +=verify.c 
+SRC +=randombytes.c 
+
+
+
+CDEFS += -DGIFT-FIRMC
+VPATH += :$(FIRMWAREPATH)/crypto/$(CRYPTO_LIB)
+EXTRAINCDIRS += $(FIRMWAREPATH)/crypto/$(CRYPTO_LIB)
+
+
+########HEADERS += matacc.h
+#SRC += cbd.c fips202.c indcpa.c kem.c ntt.c poly.c matacc.c polyvec.c PQCgenKAT_kem.c reduce.c rng.c verify.c symmetric-shake.c kyber-opt-indep.c
